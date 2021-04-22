@@ -1,51 +1,72 @@
 import React from 'react';
-import { IonButton, IonContent, IonGrid, IonRow, IonIcon } from '@ionic/react';
+import { IonButton, IonContent, IonGrid, IonRow, IonCol, IonIcon, IonTitle, IonItem, IonTextarea, IonHeader, IonText } from '@ionic/react';
 import '../theme/variables.css';
 
-const divStyle={
-  padding: 20
+const headerStyle={
+  padding: 10
 }
 
 export const ButtonExamples: React.FC = () => (
-  <div style={divStyle}>
-    {/*-- Default --*/}
-    <IonButton>Default</IonButton>
-
-    {/*-- Anchor --*/}
-    <IonButton href="#">Anchor</IonButton>
-
-    {/*-- Expand --*/}
-    <IonButton expand="full">Full Button</IonButton>
-    <IonButton expand="block">Block Button</IonButton>
-
-    {/*-- Round --*/}
-    <IonButton shape="round">Round Button</IonButton>
-
-    {/*-- Fill --*/}
-    <IonButton expand="full" fill="outline">Outline + Full</IonButton>
-    <IonButton expand="block" fill="outline">Outline + Block</IonButton>
-    <IonButton shape="round" fill="outline">Outline + Round</IonButton>
-
-    {/*-- Icons --*/}
-    
-
-    {/*-- Sizes --*/}
-    <IonButton size="large">Large</IonButton>
-    <IonButton>Default</IonButton>
-    <IonButton size="small">Small</IonButton>
-  </div>
-);
-// export const DefaultButton: React.FC = () => (
-//   <IonButton>Default</IonButton>
-// )
-
-// export const HrefAtrribute: React.FC = () => (
-//   <IonButton href='#'>Href</IonButton>
-// )
-
-// export const ExpandAttribute: React.FC = () => (
-//   <IonContent>
-//     <IonButton expand='full'>Full Button</IonButton>
-//     <IonButton expand='block'>Block Button</IonButton>
-//   </IonContent>
-// )
+  <IonContent>
+    <IonGrid>
+      <IonHeader>
+        <IonTitle className='ion-text-center' style={headerStyle}>BUTTON EXAMPLES</IonTitle>
+      </IonHeader>
+      <IonRow>
+        <IonCol className='ion-margin-vertical'>
+          <IonTitle>Button Sizes</IonTitle>
+          <IonButton size='small' color='primary'>small</IonButton>
+          <IonButton size='default' color='secondary'>default</IonButton>
+          <IonButton size='large' color='tertiary'>large</IonButton>
+        </IonCol>
+      </IonRow>
+      <IonRow>
+        <IonCol className='ion-margin-vertical'>
+          <IonTitle>Width</IonTitle>
+          <IonButton expand='full' color='success'>Full-Width Button</IonButton>
+          <IonButton expand='block' color='danger'>Block Button</IonButton>
+        </IonCol>
+      </IonRow>
+      <IonRow>
+        <IonCol className='ion-margin-vertical'>
+          <IonTitle>Fill</IonTitle>
+          <IonButton fill='solid' color='warning'>Solid Button</IonButton>
+          <IonButton fill='clear' color='success'>I am clear</IonButton>
+          <IonButton fill='default'>I am default fill</IonButton>
+          <IonButton fill='outline' color='danger'>Outline Button</IonButton>
+        </IonCol>
+        <IonCol className='ion-margin-vertical'>
+          <IonTitle>iOS vs. MD</IonTitle>
+          <IonButton mode='ios'>iOS</IonButton>
+          <IonButton mode='md'>md</IonButton>
+        </IonCol>
+      </IonRow>
+      <IonRow>
+      </IonRow>
+      <IonRow>
+        <IonCol className='ion-margin-vertical'>
+          <IonTitle>Disabled</IonTitle>
+          <IonButton disabled={true}>Can't touch this</IonButton>
+        </IonCol>
+        <IonCol className='ion-margin-vertical'>
+          <IonTitle>Shape</IonTitle>
+          <IonButton shape='round' color='medium'>Round</IonButton>
+        </IonCol>
+        <IonCol className='ion-margin-vertical'>
+          <IonTitle>Type</IonTitle>
+          <IonButton type='button' color='warning'>button</IonButton>
+          <IonButton type='submit' color='success'>submit</IonButton>
+          <IonButton type='reset' color='danger'>reset</IonButton>
+        </IonCol>
+        <IonCol className='ion-margin-vertical'>
+          <IonTitle>HREF</IonTitle>
+          <IonButton href='#' color='dark' fill='outline'>I am a link</IonButton>
+        </IonCol>
+        <IonCol className='ion-margin-vertical'>
+          <IonTitle>Strong</IonTitle>
+          <IonButton strong color='dark'>Bold Font Button</IonButton>
+        </IonCol>
+      </IonRow>
+    </IonGrid>
+  </IonContent>
+)

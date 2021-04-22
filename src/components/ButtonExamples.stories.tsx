@@ -3,18 +3,16 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 
 
 import { ButtonExamples } from './ButtonExamples';
-import { IonButton } from '@ionic/react';
+import { IonApp, IonButton } from '@ionic/react';
+
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 export default {
-  title: 'Components/ButtonExamples',
+  title: 'Components/Button Examples',
   component: ButtonExamples,
-  
+  decorators: [(Story) => <IonApp><Story /></IonApp>],
 } as Meta;
 
-const Template : Story = (args) => <ButtonExamples {...args} />
+const Template : Story =  (args) => <ButtonExamples {...args} />
 
-export const ExampleButtons = Template.bind({});
-
-// export const SomeButton : Story = (args) => (
-//   <IonButton color='danger'>Button</IonButton>
-// )
+export const Examples = Template.bind({});
